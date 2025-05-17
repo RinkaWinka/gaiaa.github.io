@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto Gaia – Acuaponía Sostenible</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:Arial,sans-serif; }
+    body {
+      /* Fondo con patrón de ondas y degradado sutil */
+      background: 
+        linear-gradient(120deg, rgba(39,174,96,0.2), rgba(52,152,219,0.2)),
+        url('gaia/wave-pattern.png') repeat;
+      background-size: auto;
+      color: #2c3e50;
+    }
+    .navbar { background:rgba(255,255,255,0.95); padding:1rem 5%; position:fixed; top:0; width:100%; box-shadow:0 2px 10px rgba(39,174,96,0.1); z-index:1000; }
+    .navbar .nav-links { display:flex; justify-content:space-around; align-items:center; }
+    .navbar a { text-decoration:none; color:#2c3e50; padding:0.5rem 1rem; transition:0.3s; font-weight:600; }
+    .navbar a:hover { color:#27ae60; }
+
+    .hero { background:linear-gradient(135deg,rgba(39,174,96,0.9),rgba(52,152,219,0.9)); color:#fff; text-align:center; padding:10rem 2rem 6rem; margin-top:60px; position:relative; overflow:hidden; }
+    .hero::before { content:''; background:url('gaia/gaia.jpg') no-repeat center center; background-size:cover; opacity:0.15; position:absolute; inset:0; z-index:-1; }
+
+    .section { padding:4rem 5%; background:rgba(255,255,255,0.95); margin:2rem auto; border-radius:15px; box-shadow:0 5px 15px rgba(0,0,0,0.05); max-width:1200px; border:1px solid #e0f7fa; }
+
+    /* Sección Proyecto Gaia con tarjetas alineadas */
+    #proyecto .grid-container {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    #proyecto .card {
+      flex: 1;
+      min-width: 300px;
+      background:#fff;
+      padding:2rem;
+      border-radius:12px;
+      box-shadow:0 3px 10px rgba(52,152,219,0.1);
+      border-top:4px solid #27ae60;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+    #proyecto .card:hover { transform:translateY(-5px); box-shadow:0 10px 20px rgba(39,174,96,0.15); }
+
+    .grid-container:not(#proyecto .grid-container) {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:2rem;
+      margin-top:2rem;
+    }
+
+    .img-container { border-radius:12px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,0.1); margin:1rem 0; }
+    .img-container img { width:100%; height:auto; display:block; transition:transform 0.5s ease; }
+    .img-container:hover img { transform:scale(1.03); }
+
+    .faq-item { margin-bottom:1.5rem; }
+    .faq-item h4 { margin-bottom:0.5rem; color:#27ae60; }
+    .faq-item p { line-height:1.5; }
+
+    .contact-form { display:grid; gap:1.5rem; max-width:600px; margin:0 auto; }
+    input, textarea { padding:1rem; border:2px solid #e0f7fa; border-radius:8px; font-size:1rem; transition:0.3s; }
+    input:focus, textarea:focus { border-color:#27ae60; outline:none; }
+
+    button { background:linear-gradient(to right,#27ae60,#219a52); color:#fff; padding:1rem 2rem; border:none; border-radius:8px; cursor:pointer; transition:0.3s; font-weight:bold; letter-spacing:1px; }
+    button:hover { background:linear-gradient(to right,#219a52,#1d8348); box-shadow:0 5px 15px rgba(39,174,96,0.3); }
+
+    footer { background:linear-gradient(135deg,#2c3e50,#34495e); color:#fff; text-align:center; padding:3rem; margin-top:4rem; }
+    footer a { color:#fff; text-decoration:none; }
+
+    h1, h2, h3, h4 { color:#1a5276; }
+    h2 { font-size:2.2rem; margin-bottom:2rem; position:relative; display:inline-block; }
+    h2::after { content:''; position:absolute; bottom:-10px; left:0; width:60px; height:4px; background:#27ae60; border-radius:2px; }
+
+    @media (max-width:768px) {
+      #proyecto .grid-container, #servicios .grid-container { flex-direction:column; align-items:center; }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-links">
+      <a href="#inicio">Inicio</a>
+      <a href="#proyecto">Proyecto Gaia</a>
+      <a href="#faq">Preguntas Frecuentes</a>
+      <a href="#servicios">Servicios Técnicos</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Proyecto Gaia</h1>
+    <p>Sistema de Acuaponía Sostenible para el Futuro</p>
+    <button onclick="location.href='#contacto'">Contáctanos</button>
+  </section>
+
+  <section id="inicio" class="section">
+    <h2>¿Qué es la Acuaponía?</h2>
+    <div class="grid-container">
+      <div class="card">
+        <h3>Cultivo Integrado</h3>
+        <p>La acuaponía combina la acuicultura (cría de peces) con la hidroponía (cultivo de plantas sin suelo) en un sistema simbiótico.</p>
+        <div class="img-container"><img src="gaia/la_calidad_del_agua_en_acuaponia.jpg" alt="Calidad del agua en acuaponía"></div>
+      </div>
+      <div class="card">
+        <h3>Sostenibilidad</h3>
+        <p>Los desechos de los peces nutren las plantas, y las plantas filtran el agua para los peces, creando un ecosistema cerrado.</p>
+        <div class="img-container"><img src="gaia/los-3-tips-agrotendencia-agropedia-fig-2.jpg" alt="Tips para no malgastar agua"></div>
+      </div>
+      <div class="card">
+        <h3>Eficiencia</h3>
+        <p>Usa 90% menos agua que la agricultura tradicional y no requiere fertilizantes químicos.</p>
+        <div class="img-container"><img src="gaia/malgastar-agua-726x413.jpg" alt="Malgasto de agua"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="proyecto" class="section">
+    <h2>Nuestro Proyecto: Gaia</h2>
+    <div class="grid-container">
+      <div class="card">
+        <h3>Tecnología Innovadora</h3>
+        <p>Gaia utiliza sensores IoT para monitorear en tiempo real los parámetros del agua, crecimiento vegetal y salud de los peces.</p>
+        <div class="img-container"><img src="gaia/gaia.jpg" alt="Sistema Gaia"></div>
+      </div>
+      <div class="card">
+        <h3>Beneficios Clave</h3>
+        <ul>
+          <li>✔️ Producción simultánea de peces y vegetales</li>
+          <li>✔️ Sistema automático de alimentación</li>
+          <li>✔️ Control remoto vía aplicación móvil</li>
+          <li>✔️ Diseño modular escalable</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="section">
+    <h2>Preguntas Frecuentes</h2>
+    <div class="faq-item">
+      <h4>¿Cómo funciona el sistema de reciclaje de agua?</h4>
+      <p>El agua de los tanques de peces, rica en nutrientes, circula hacia las camas de cultivo, donde las plantas la filtran y la regresan limpia al acuario.</p>
+    </div>
+    <div class="faq-item">
+      <h4>¿Qué tipo de peces se pueden criar?</h4>
+      <p>Recomendamos tilapias, carpas y peces de agua dulce resistentes, ideales para sistemas de acuaponía doméstica y comercial.</p>
+    </div>
+    <div class="faq-item">
+      <h4>¿Es necesario tener experiencia previa?</h4>
+      <p>No, nuestro sistema incluye un manual detallado y soporte técnico remoto para guiarte paso a paso.</p>
+    </div>
+  </section>
+
+  <section id="servicios" class="section">
+    <h2>Servicios Técnicos</h2>
+    <div class="grid-container">
+      <div class="card">
+        <h3>Reparación de componentes</h3>
+        <p>Diagnóstico y reparación de hardware y software: cambio de piezas, formateo, optimización y limpieza interna.</p>
+      </div>
+      <div class="card">
+        <h3>Mantenimiento de Acuaponía</h3>
+        <p>Limpieza profesional, reparación de lectores y actualización de componentes.</p>
+      </div>
+      <div class="card">
+        <h3>Servicio de Control Remoto</h3>
+        <p>Asistencia técnica vía remoto para resolver problemas de software, configuración y optimización de sistemas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="section">
+    <h2>Contacto</h2>
+    <form class="contact-form" action="mailto:gaia@unitecnica.com?subject=Consulta%20Proyecto%20Gaia" method="post" enctype="text/plain">
+      <input type="text" name="nombre" placeholder="Tu Nombre" required>
+      <input type="email" name="email" placeholder="Tu Correo" required>
+      <input type="tel" name="telefono" placeholder="Tu Teléfono">
+      <textarea name="mensaje" rows="5" placeholder="Tu Mensaje" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+    <p style="text-align:center; margin-top:1rem; color:#555;">
+      O escríbenos directamente: <a href="mailto:gaiaunitecnica@gmail.com">gaiaunitecnica@gmail.com</a> | <a href="tel:+573117444057">311 744 4057</a>
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2025 Proyecto Gaia – Todos los derechos reservados</p>
+    <p><a href="mailto:gaiaunitecnica@gmail.com">gaiaunitecnica@gmail.com</a> | <a href="tel:+573117444057">311 744 4057</a></p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>
